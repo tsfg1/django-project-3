@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if nonTip %} <!--如果包含'nonTip-->
+        <h2>{{nonTip}}</h2>
+    {% else %}<!--如果不包含'nonTip-->
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{userinfo.avatar_url}}" alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">{{userinfo.login}}</h5>
+            <p class="card-text">public_repos: {{userinfo.public_repos}}</p>
+            <a href="{{userinfo.html_url}}" class="btn btn-primary">访问</a>
+            </div>
+        </div>    
+    {% endif %}
+
+
+{% endblock %}

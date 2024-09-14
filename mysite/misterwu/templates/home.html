@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>哈哈哈</h1>
+
+    <div class="container">
+        <div class="row"> 
+            {% for x in aaa%} <!-- 与views.py中 def home(request):中相对应  -->
+            <div class="col-sm">   
+                <div class="card" style="width: 18rem;"> <!--每一个表格项-->
+                    <img class="card-img-top" src="{{x.avatar_url}}" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">{{x.login}}</h5>
+                    <p class="card-text">{{x.login}}的github</p>
+                    <a href="{{x.html_url}}" class="btn btn-primary">访问</a>
+                    </div>
+                </div>    
+                <br />
+            </div>
+            {% endfor %} 
+        </div>
+    </div>
+
+
+
+{% endblock %}
